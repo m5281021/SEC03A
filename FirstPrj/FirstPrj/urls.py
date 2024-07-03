@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from FirstApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('hello', views.hello),
+    path('', views.index, name = 'view-index'),
+    path('register_user', views.register_new_user),
+    path('register_seat', views.register_new_movie_seats),
+    path('user_movie', views.show_user_movies),
+    path('matching_movie', views.show_matching_movies_date),
+    path('matching_date', views.show_matching_dates_movie)
 ]

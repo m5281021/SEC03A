@@ -23,7 +23,7 @@ class Showtime(models.Model):
 class Seat(models.Model):
     showtime = models.ForeignKey(Showtime, on_delete = models.CASCADE, related_name = 'showtimes')
     reserved = models.BooleanField()
-    user = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'users')
+    user = models.ForeignKey(User, on_delete = models.PROTECT, related_name = 'users')
     
     def __str__(self):
         return str(self.showtime) + str(self.reserved) + str(self.user)
