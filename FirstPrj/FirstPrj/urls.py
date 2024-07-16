@@ -25,5 +25,13 @@ urlpatterns = [
     path('register_seat', views.register_new_movie_seats),
     path('user_movie', views.show_user_movies),
     path('matching_movie', views.show_matching_movies_date),
-    path('matching_date', views.show_matching_dates_movie)
+    path('matching_date', views.show_matching_dates_movie),
+    path('base', views.base)
+    # path('register', ),
+    # path('do_register', ),
+    # path('do_reserve', ),
+    # path('do_login', ),
+    # path('do_logout', ),
+    # path('past_reservations', ),
+    # path('check_date', )
 ]

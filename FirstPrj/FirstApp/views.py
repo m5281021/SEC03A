@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from FirstApp.models import User, Movie, Showtime, Seat
 from django.db import transaction
+from django.template import loader
 
 user_name = 'John Clark'
 seat_number = 10
@@ -57,3 +58,7 @@ def show_matching_dates_movie(request):
     except show_matching_dates_movie:
         return HttpResponse("Something went wrong.")
     return HttpResponse("These days may match you!")
+
+def base(request):
+    template = loader.get_template('base.html')
+    return HttpResponse(template.render())
