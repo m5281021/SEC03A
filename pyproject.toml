@@ -6,8 +6,9 @@ authors = ["m5281021"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10"
 Django = "^5.0.6"
+django-htmx = "^1.18.0"
 
 [tool.poetry.group.dev.dependencies]
 Django = "^5.0.6"

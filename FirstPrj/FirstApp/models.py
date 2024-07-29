@@ -2,15 +2,17 @@ from django.db import models
 
 class User(models.Model):
     name = models.CharField(max_length = 20)
+    login = models.CharField(max_length = 20)
+    password = models.CharField(max_length = 250)
     
     def __str__(self):
-        return self.name
+        return f'{self.name}'
 
 class Movie(models.Model):
     name = models.CharField(max_length = 20)
     
     def __str__(self):
-        return self.name
+        return f'{self.name}'
 
 class Showtime(models.Model):
     time = models.DateField()
@@ -22,8 +24,9 @@ class Showtime(models.Model):
 
 class Seat(models.Model):
     showtime = models.ForeignKey(Showtime, on_delete = models.CASCADE, related_name = 'showtimes')
+    number = models.IntegerField()
     reserved = models.BooleanField()
-    user = models.ForeignKey(User, on_delete = models.PROTECT, related_name = 'users')
+    user = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'users', null = True)
     
     def __str__(self):
-        return f'{str(self.showtime)} {str(self.user)} {str(self.reserved)}'
+        return f'{str(self.showtime)} {str(self.number)} {str(self.reserved)}'
