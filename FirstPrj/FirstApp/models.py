@@ -9,7 +9,7 @@ class User(models.Model):
         return f'{self.name}'
 
 class Movie(models.Model):
-    name = models.CharField(max_length = 20)
+    name = models.CharField(max_length = 30)
     
     def __str__(self):
         return f'{self.name}'
@@ -26,7 +26,7 @@ class Seat(models.Model):
     showtime = models.ForeignKey(Showtime, on_delete = models.CASCADE, related_name = 'showtimes')
     number = models.IntegerField()
     reserved = models.BooleanField()
-    user = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'users', null = True)
+    user = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'users', blank = True, null = True)
     
     def __str__(self):
         return f'{str(self.showtime)} {str(self.number)} {str(self.reserved)}'

@@ -1,0 +1,18 @@
+{% if registered %}
+	Registered successfully!
+	<p>
+		<a href="/home">Go home</a>
+	</p>
+{% else %}
+	{% if error %}
+		<p>Cannot register!<p><b>{{ error | safe }}</b><p>&nbsp;</p>
+	{% endif %}
+
+	Please register yourself
+	<p id = "check_regform_result"></p>
+	<p>
+	<form>
+		{{ register_form.as_p }}
+		<input type="submit" value="Submit" hx-post="/do_register" hx-target="#main_box">
+	</form>
+{% endif %}

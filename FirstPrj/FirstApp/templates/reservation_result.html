@@ -1,0 +1,9 @@
+{% if error %}
+	{{ error|safe }}
+	<p><p><a href="/reserve_form_frame" hx-post="/reserve_form_frame" hx-target="#main_box">Try again</a>
+{% else %}
+	Your reservation detail is the following:<p>
+	<b>Name:</b> {{ user_name }}<p>
+	<b>Movie:</b> {{ movie_name }}<p>
+	<b>Date:</b> {{ timeslot }}<p>
+{% endif %}

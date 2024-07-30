@@ -19,12 +19,19 @@ from FirstApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('base', views.base)
-    # path('register', ),
-    # path('do_register', ),
-    # path('do_reserve', ),
-    # path('do_login', ),
-    # path('do_logout', ),
+    path('', views.base, name = "views-base"),
+    path('home', views.base),
+    path('login_frame', views.login_frame),
+    path('register_frame', views.register_frame),
+    path('register_form_frame', views.register_form_frame),
+    path('reservations_frame', views.reservations_frame),
+    path('reserve_form_frame', views.reserve_form_frame),
+    path('do_register', views.do_register),
+    path('do_check_regform', views.do_check_regform),
+    path('do_login', views.do_login),
+    path('do_logout', views.do_logout),
+    path('do_check_seats', views.do_check_seats),
+    path('seats_form_frame', views.seats_form_frame),
+    path('do_reserve', views.do_reserve)
     # path('past_reservations', ),
-    # path('check_date', )
 ]

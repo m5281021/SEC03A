@@ -1,0 +1,7 @@
+<form method = "post">
+    <h1>Select Seats</h1>
+	<table>
+        {% csrf_token %}
+        {{ seats_form.as_table }}
+    </table>
+</form>

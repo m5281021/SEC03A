@@ -1,0 +1,8 @@
+<b>Patient:</b> {{ user_name }} <p>
+<b>Reservations:</b>
+<table>
+    <th>Doctor</th><th>Date</th>
+    {% for p in reservations %}
+    <tr><td style="padding-right:10px">{{ p.doctor.name }}</td><td>{{ p.timeslot }}</td></tr>
+    {% endfor %}
+</table>

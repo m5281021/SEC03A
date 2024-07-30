@@ -1,0 +1,9 @@
+<form>
+	<table>
+		<tr><th colspan = "2">New Reservation</th></tr>
+		{{ reserve_form.as_table }}
+	</table>
+	<div id = "check_reserve_result">{{ date_result }}</div>
+	<section id="seats_box" hx-get="/seats_form_frame"></section>
+	<input type = "submit" value = "Reserve" hx-post = "/do_reserve" hx-target = "#main_box">
+</form>

@@ -1,11 +1,12 @@
 {% load static %}
+{% load django_htmx %} <!-- optional: debug -->
 <script src="{% static 'htmx.min.js' %}" defer></script>
 
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
     <meta charset="utf-8">
-    <title>Maxim's Super Dentistry</title>
+    <title>Theater Reservation Service</title>
     <link rel="stylesheet" href="{% static 'style.css' %}"/>
 	<link rel="shortcut icon" href="{% static 'favicon.ico' %}"/>
 </head>
@@ -14,19 +15,19 @@
 	<header>
 		<div id="logo">
 			<a href="/home"><img src="{% static '/logo.png' %}"></a>
-			Maxim's Super Dentistry
+			Theater Reservation Service
 		</div>
 		<p></p>
 		<nav>
 			<ul>
-				<li id="loc_login_frame" hx-trigger="load,evt_login from:body" hx-get="/login_frame"></li>
-				<li hx-trigger="load,evt_login from:body" hx-get="/register_frame"></li>
-				<li hx-trigger="load,evt_login from:body" hx-get="/reservations_frame"></li>
+				<li id="loc_login_frame" hx-trigger="load, evt_login from:body" hx-get="/login_frame"></li>
+				<li hx-trigger="load, evt_login from:body" hx-get="/register_frame"></li>
+				<li hx-trigger="load, evt_login from:body" hx-get="/reservations_frame"></li>
 			</ul>
 		</nav>
 	</header>
 	
-	<section id="main_box" hx-trigger="load,evt_login from:body" hx-get="/reserve_form_frame"></section>
+	<section id="main_box" hx-trigger="load, evt_login from:body" hx-get="/reserve_form_frame"></section>
 
 	<footer>
 		<p>Powered by <a href="https://html5-templates.com/" target="_blank" rel="nofollow">HTML5 Templates</a></p>
