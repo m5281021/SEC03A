@@ -1,8 +1,7 @@
-<b>Patient:</b> {{ user_name }} <p>
-<b>Reservations:</b>
+<b>User:</b> {{ user_name }} <p>
 <table>
-    <th>Doctor</th><th>Date</th>
-    {% for p in reservations %}
-    <tr><td style="padding-right:10px">{{ p.doctor.name }}</td><td>{{ p.timeslot }}</td></tr>
+    <th>Date</th><th>Movie Title</th>
+    {% for r in reservations %}
+    <tr><td style="padding-right:10px">{{ r.0 }}</td><td>{{ r.1 }}</td></tr>
     {% endfor %}
 </table>

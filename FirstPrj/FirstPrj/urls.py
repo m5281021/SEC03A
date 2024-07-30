@@ -32,6 +32,6 @@ urlpatterns = [
     path('do_logout', views.do_logout),
     path('do_check_seats', views.do_check_seats),
     path('seats_form_frame', views.seats_form_frame),
-    path('do_reserve', views.do_reserve)
-    # path('past_reservations', ),
+    path('do_reserve', views.do_reserve),
+    path('past_reservations', views.past_reservations),
 ]

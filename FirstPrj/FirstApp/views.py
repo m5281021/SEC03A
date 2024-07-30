@@ -178,19 +178,20 @@ def do_reserve(request):
 
     return result
 
-    """
 def past_reservations(request):
     user_login = request.session.get("authorized_user_login", None)
-    p = Patient.objects.filter(login=user_login).get()
-    r_list = Reservation.objects.filter(patient=p).order_by("-timeslot")
+    user = User.objects.filter(login = user_login).get()
+    r_list = Seat.objects.filter(user = user)
+    pr = []
+    for r in r_list:
+        length_of_title = len(f"{r.showtime}") - 1
+        pr.append([f"{r.showtime}"[0:10], f"{r.showtime}"[14:length_of_title]])
 
     return render(
         request,
         "past_reservations.html",
         {
-            "user_login": user_login,
-            "user_name": p.name,
-            "reservations": r_list,
+            "user_name": user.name,
+            "reservations": pr,
         },
     )
-    """
